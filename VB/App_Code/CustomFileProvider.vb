@@ -11,6 +11,7 @@ Public Class CustomFileProvider
     Public Sub New(ByVal rootFolder As String)
         MyBase.New(rootFolder)
     End Sub
+    
     Public Overrides Function GetFolders(ByVal parentFolder As FileManagerFolder) As IEnumerable(Of FileManagerFolder)
         Dim folders As New List(Of FileManagerFolder)(MyBase.GetFolders(parentFolder))
         Return folders.OrderByDescending(Function(a) a.Name)
